@@ -5,9 +5,9 @@ class MQTTClient:
     def __init__(self):
         self.client = mqtt.Client()
         self.broker_url = "90e53740d0f446b8aef77a5fab1303ac.s2.eu.hivemq.cloud"
-        self.broker_port = 8883  # Portul implicit pentru MQTT over TLS
-        self.username = "bogdan"  # Specificați numele de utilizator aici
-        self.password = "Unitbv2023"  # Specificați parola aici
+        self.broker_port = 8883
+        self.username = "bogdan"
+        self.password = "Unitbv2023"
         self.loop = asyncio.get_event_loop()
         self.sensor_data = {}
 
