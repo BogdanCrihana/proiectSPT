@@ -10,8 +10,11 @@ async def read_sensor_data(sensor_id: str):
     data = await mqtt_client.get_sensor_data(sensor_id)
     return {"sensor_id": sensor_id, "data": data}
 
-if __name__ == "__main__":
+async def main():
     loop = asyncio.get_event_loop()
     loop.create_task(mqtt_client.connect())
-    import uvicorn
+    await asyncio.sleep(0)    
+
+if __name__ == "__main__":
+    asyncio.run(main())
     uvicorn.run(app, host="0.0.0.0", port=8883)
